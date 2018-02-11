@@ -6,8 +6,8 @@ import tem_cont from '@/components/showtwo'
 import tem_error from '@/components/error'
 
 //安装插件
-Vue.use(Router)
-Vue.use(VueResource)
+Vue.use(Router);
+Vue.use(VueResource);
 
 export default new Router({
 	routes:[

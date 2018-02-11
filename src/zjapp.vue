@@ -7,8 +7,10 @@
 				</transition>
 				<transition name='btn' appear mode='out-in'>
 					<div class="app-btn" v-show="allData.mainShow">
-						<button class="btn btn-success app-btn-back" v-show="back==0?false:true" v-on:click="dosom('back')">上一页</button>
-						<button class="btn btn-success app-btn-next" v-show="next==0?false:true" v-on:click="dosom('next')">下一页</button>
+						<button class="btn btn-success app-btn-back"
+								v-show="back==0?false:true" v-on:click="dosom('back')">上一页</button>
+						<button class="btn btn-success app-btn-next"
+								v-show="next==0?false:true" v-on:click="dosom('next')">下一页</button>
 					</div>
 				</transition>
 				<div class="app-loading" v-show="loading">
@@ -95,11 +97,9 @@
 								
 								//详细显示页面数据来源
 								this.allData.detailedData=listNum.slice(typeData,typeData+1)[0];
-								
 								this.loading=false;
 							},700);
 						});
-							
 					});
 					this.allData.mainShow=false;
 				}else{
@@ -142,8 +142,7 @@
 	.btn-leave-active{
 		opacity: 0;
 	}
-	
-	
+
 	/*back,next btn-class*/
 	.app-btn{
 		overflow: hidden; 

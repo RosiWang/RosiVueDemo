@@ -12,7 +12,7 @@
 	export default{
 		methods:{
 			jump(num){
-				num==0?router.push("/user/0/0"):router.push("/user/1/0");
+				num==0?router.push("/item/0/0"):router.push("/item/1/0");
 			}
 		}
 	}

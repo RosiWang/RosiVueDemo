@@ -42,7 +42,7 @@
 			link(num){
 				var listNum=this.$route.path.slice(6,7);
 				if(listNum!=num){
-					router.push("/user/"+num+"/0");
+					router.push("/item/"+num+"/0");
 					this.isActive=this.$route.path.slice(6,7);
 				}
 			}

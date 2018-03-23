@@ -12,7 +12,7 @@ Vue.use(VueResource);
 export default new Router({
 	routes:[
 		{
-			path:"/user/:list/:listNum",
+			path:"/item/:list/:listNum",
 			component:tem,
 			children:[
 				{
@@ -22,7 +22,7 @@ export default new Router({
 			]
 		},
 		{
-			path:"/user/error",
+			path:"/item/error",
 			component:tem_error
 		}
 	]

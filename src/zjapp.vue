@@ -31,7 +31,7 @@
 					num:0,
 					mainShow:true
 				},
-				loading:false,
+				loading:true,
 				change:true,
 				back:0,
 				next:1,
@@ -59,14 +59,14 @@
 			},
 			routePath(){
 				if(this.$route.fullPath=="/"){
-					router.push("/user/0/0");
+					router.push("/item/0/0");
 					this.load();
 				}
 				else if(this.$route.fullPath.length==9 || this.$route.fullPath.length==20){
 					this.load();
 				}
 				else{
-					router.push("/user/error");
+					router.push("/item/error");
 					this.back=0;
 					this.next=0;
 				}
@@ -91,10 +91,8 @@
 						this.$http.get("static/data-"+listData+".json").then(rea=>{
 							this.loading=true;
 							setTimeout(e=>{
-								
 								//vue-resource加载数据存在于data.body中
 								var listNum=rea.body.allData.slice(numData*6,numData*6+6);
-								
 								//详细显示页面数据来源
 								this.allData.detailedData=listNum.slice(typeData,typeData+1)[0];
 								this.loading=false;
@@ -107,7 +105,6 @@
 						this.loading=true;
 						setTimeout(e=>{
 							this.$http.get("static/data-"+listData+".json").then(rea=>{
-								
 								this.allData.showData=rea.body.allData.slice(numData*6,numData*6+6);
 								this.loading=false;
 							});
@@ -142,7 +139,6 @@
 	.btn-leave-active{
 		opacity: 0;
 	}
-
 	/*back,next btn-class*/
 	.app-btn{
 		overflow: hidden; 
@@ -163,8 +159,7 @@
 		bottom: 0;
 		right: 0;
 	}
-	
-	
+
 	/*loading*/
 	.app-loading{
 		background-color: tan;

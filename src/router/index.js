@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import VueResource from 'vue-resource'
-import tem from '@/components/showone'
-import tem_cont from '@/components/showtwo'
-import tem_error from '@/components/error'
+import temp from '@/components/showone'
+import temp_cont from '@/components/showtwo'
+import temp_error from '@/components/error'
 
 //安装插件
 Vue.use(Router);
@@ -13,17 +13,17 @@ export default new Router({
 	routes:[
 		{
 			path:"/item/:list/:listNum",
-			component:tem,
+			component:temp,
 			children:[
 				{
 					path:"con",
-					component:tem_cont
+					component:temp_cont
 				}
 			]
 		},
 		{
 			path:"/item/error",
-			component:tem_error
+			component:temp_error
 		}
 	]
 })

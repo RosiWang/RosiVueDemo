@@ -1,4 +1,4 @@
-<template>
+<template xmlns:v-on="http://www.w3.org/1999/xhtml">
 	<div style='height:700px;padding-top:50px'>
 		<div>
 			<img v-bind:src='routerNesting.detailedData.src' style='display:block;margin:0 auto;width:500px'>
@@ -15,6 +15,7 @@
 		props:["routerNesting"],
 		methods:{
 			back(){
+			    console.log(this.$route.path.slice(0,9));
 				router.push(this.$route.path.slice(0,9));
 			}
 		}

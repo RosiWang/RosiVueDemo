@@ -4,7 +4,7 @@
 			<nav class='navbar navbar-default'>
 				<div class='container' style="padding: 0;">
 					<div class='collapse navbar-collapse' style="padding: 0;">
-						<ul class="collapse navbar-collapse">
+						<ul class="nav navbar-nav userNav">
 							<li><a v-bind:class="{activeBg:isActive==0}" v-on:click='link(0)'>首页</a></li>
 							<li><a v-bind:class="{activeBg:isActive==1}" v-on:click='link(1)'>页面一</a></li>
 						</ul>
@@ -27,34 +27,34 @@
 	</div>
 </template>
 <script>
-	import router from '.././router'
-	export default{
-		props:["routerData"],
-		data(){
-			return {
-				isActive:this.$route.path.slice(6,7)
-			}
-		},
-		methods:{
-			go(obj,index){
-				router.push({path:this.$route.path+"/con",query:{type:index}});
-			},
-			link(num){
-				var listNum=this.$route.path.slice(6,7);
-				var pathS = this.$route.path;
-				if(listNum!=num){
-					router.push("/item/"+num+"/0");
-					this.isActive=this.$route.path.slice(6,7);
-				}
-			}
-		},
-		filters:{
-			more(value){
-				var newMessage=value.slice(0,40)+"........点击查看更多";
-				return newMessage;
-			}
-		}
-	}
+    import router from '.././router'
+    export default{
+        props:["routerData"],
+        data(){
+            return {
+                isActive:this.$route.path.slice(6,7)
+            }
+        },
+        methods:{
+            go(obj,index){
+                router.push({path:this.$route.path+"/con",query:{type:index}});
+            },
+            link(num){
+                var listNum=this.$route.path.slice(6,7);
+                var pathS = this.$route.path;
+                if(listNum!=num){
+                    router.push("/item/"+num+"/0");
+                    this.isActive=this.$route.path.slice(6,7);
+                }
+            }
+        },
+        filters:{
+            more(value){
+                var newMessage=value.slice(0,40)+"........点击查看更多";
+                return newMessage;
+            }
+        }
+    }
 </script>
 <style>
 	.activeBg{
